@@ -38,7 +38,11 @@
 </style>
 <body>
 <%
+	String txtsearch = null;
 	int id_loaisp = 0, sapxep = 0, high_to_low = 0;
+	if(request.getAttribute("txtsearch")!=null){
+		txtsearch = request.getAttribute("txtsearch").toString();
+	}
 	if(request.getAttribute("high_to_low")!=null){
 		high_to_low = 1;
 	}
@@ -101,8 +105,8 @@
                             <h5>Tìm kiếm nâng cao</h5>
                         </div>
 						<div class="option_search-list">
-                           <form action="/ShopBanSach/filterByPriceServlet" method="post">
-
+						<form action="/ShopBanSach/timkiemnangcao" method="post">
+							 <input type="hidden" name ="txtsearch" value ="<%=txtsearch %>"> 
 	                            <ul class="list-group list-group-flush d-flex option-filter">
 	                                <li class="list-group-item option-filter-item">
 	                                    <div class="form-check mt-2 ">
@@ -151,7 +155,7 @@
                     </ul>
                     <!-- Danh sách sản phẩm -->
                     <div class="d-flex flex-column">
-                        <h3 class="product_title align-self-center mx-auto w-25 text-center pb-1 pt-5">SẢN PHẨM</h3>
+                        <h3 class="product_title align-self-center mx-auto w-25 text-center pb-1 pt-5" id="row">SẢN PHẨM</h3>
                         <!-- Sắp xếp theo giá -->
                         <div class="dropdown d-flex flex-row-reverse"  onclick="sortByPrice()" >
                             <button type="button" class="btn btn-sort dropdown-toggle border border-2 " data-bs-toggle="dropdown"> Sắp xếp theo giá</button>
@@ -172,7 +176,7 @@
                             </ul>
                         </div>                       	
                         <!-- Sản phẩm -->
-                        <div class="row">
+                        <div class="row" >
 						<c:forEach items="${products}" var="product" begin="<%=start -1%>" end="<%=end-1 %>">
 	                        	 <div class="col-3 product">
 									 <button data-bs-toggle="modal" data-bs-target="#product" class="card mt-5 mota" onclick="myfinction('${product.img }', '${product.name }','${product.price }','${product.publisher }','${product.description }','${product.author }','${product.id }')" >
@@ -244,7 +248,7 @@
 																<form action="/ShopBanSach/cartServlet" method="get">
 																    <input type="hidden" name="id" id ="id_add">
 																     <input type="hidden" name="id_sl" id ="id_sl">
-																    <input type="submit" onclick ="soluong()" value="Thêm sản phẩm" >
+																    <input type="submit" class="btn btn-primary" onclick ="soluong()" value="Thêm sản phẩm" >
 																  </form>                                                      
 	                                                        </div>
 	                                                    </div>
@@ -365,6 +369,8 @@
     <%@include file="/view/template/footer.jsp" %>
     <script src="/ShopBanSach/view/js/account.js"></script>
     <script>
+    var targetObject = document.getElementById("row");
+    targetObject.scrollIntoView({ behavior: 'smooth', block: 'start' });
     	var col = <%=int_page %>;
     	document.getElementById(col).style.backgroundColor = "red"
         var firstTabEl = document.querySelector('#myTab li:last-child a')
@@ -385,6 +391,7 @@
         function soluong() {
         	document.getElementById('id_sl').value = document.getElementById('slsp').value
 		}
+       
       </script>
 </body>
 </html>
