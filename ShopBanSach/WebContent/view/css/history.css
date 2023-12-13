@@ -1,0 +1,30 @@
+.title{
+	text-align: center;
+}
+
+.table{
+    text-align: center;
+}
+
+.button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;  
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}

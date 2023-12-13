@@ -1,0 +1,135 @@
+#payment {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width:1140px;
+    background-color:#F5F1ED ;
+    margin: 0px auto;
+	margin-bottom:20px;
+  }
+  
+  #payment #header-payment {
+    background-color:#37465D;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  #payment #content-payment {
+    padding: 20px;
+  }
+  #payment #content-payment #detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+  #detail #customer-details{
+    flex-basis: 50%;
+    border-right:2px solid blue;
+    font-size: 33px;
+  }
+  #detail #order-details{
+    flex-basis: 45%;
+  }
+  #detail #order-details #btOrder{
+    background-color:#0355A1;
+    color: white;
+    font-size: 30px;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-left:100px;
+  
+   
+  }
+  #order-details table{
+    margin-top: 100px;
+    margin-bottom: 45px;
+    border: 2px solid blue;
+   border-radius: 10px;
+   border-spacing: 0;
+   background-color: #fff;
+   font-size:30px;
+  }
+  
+  #order-details table tr td,th{
+    padding:10px 10px 10px 10px;
+    
+  }
+  #order-details table tr.border td{
+    border-bottom: 1px solid blue;
+
+  }
+  #order-details table tr.border th{
+    border-bottom: 1px solid blue;
+  }
+  .font-header h1{
+   padding:10px 10px 0px 5px;
+  }
+  .font-header h1 i{
+    padding-right: 10px;
+  }
+  .form-group {
+    position: relative;
+}
+.form-group i{
+    position: absolute;
+    left: 13px;
+    bottom: 22px;
+}
+.form-group input{
+    padding: 22px 50px;
+    border-radius: 10px;
+    width: 410px;
+    font-size: 25px;
+}
+
+#form-payment{
+   flex-basis:100% ;
+   display: flex;
+   margin-top: 10px;
+}
+#form-payment .postpaid img{
+display:block ;
+padding: 1px 1px;
+margin-right: 75px;
+}
+#form-payment .prepay input{
+    margin-left: 30px;
+}
+#form-payment .prepay img{
+    display: block;
+    padding: 5px 5px;
+    margin-bottom: 15px;
+}
+#form-delivery{
+    flex-basis:100% ;
+   display: flex;
+   padding-top: 10px;
+}
+#form-delivery .fast img{
+    display: block;
+    
+    padding: 1px 1px;
+    margin-right: 75px;
+}
+#form-delivery .savings input{
+    margin-left: 20px;
+   
+}
+#form-delivery .savings img{
+    display: block;
+   margin-bottom: 24px;
+}
+ #payment #footer-payment {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .h2payment{
+    margin-top:40px;
+  }
+ 
+  

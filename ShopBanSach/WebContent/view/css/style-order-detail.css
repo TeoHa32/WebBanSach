@@ -1,0 +1,40 @@
+/* LOGO - TITLE */
+.logo-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-title .title{
+    font-size: 35px;
+    
+}
+
+/* Cart-item */
+.table{
+    text-align: center;
+}
+.color-xmark{
+    color: #C53535;
+    cursor: pointer;
+}
+
+/* Order-Detail */
+.orderdetail-title{
+    background-color: #F6F1EE;
+    border-radius: 20px;
+    height: auto;
+}
+.orderdetail{
+    font-size: 35px;
+    text-align: center;
+}
+.banggia{
+    font-size: 18px;
+    margin-top: 20px;
+}
+.product-name {
+    margin-right: 10px;
+}
+.price{
+    margin-left: auto;
+}

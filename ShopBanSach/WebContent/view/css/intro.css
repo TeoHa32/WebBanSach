@@ -1,0 +1,127 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: "Mulish";
+    
+}
+.banner{
+    position: relative;    
+}
+.banner img{
+    width: 100%;
+    height: auto;    
+}
+.banner_txt{
+    background-color: none;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);    
+}
+.banner_txt-title{
+    text-align: center;    
+}
+.banner_txt-content{
+    font-weight:300px;
+    font-size: 20px;    
+}
+/* content1 */
+.content{
+    background-color: #FFFBF6;
+    padding: 50px;
+}
+.content1_img_chua{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content1_img{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.content1_txt_chua{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content1_txt{
+    text-align: center;
+    font-size: 20px;
+
+}
+/* content2 */
+.tittle{
+    margin-top: 90px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.tittle_txt{
+    color: #0C0C0C;
+    font-size: 20px;
+}
+.content2{
+    text-align: center;
+    margin: 30px;
+    
+}
+.chua{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content_circle{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: #F1F2F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content2_img{
+    height: 69px;
+    width: 58px;
+    object-fit: contain;    
+}
+.content2_txt{
+    color: #0C0C0C;
+    font-size: 16px;
+}
+/* content3 */
+.content3{
+    margin: 60px;
+}
+.content3 h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.content3_img{
+    width: 516px ;
+    height: 316px;
+    object-fit: cover;    
+}
+.content3_txt{
+    font-size: 16px;
+    color: #0C0C0C;
+}
+.content3_btn{
+    color: white;
+    background-color: #44B89D;
+    width: 119px;
+    height: 44px;
+    border-radius: 45px;
+    margin: 40px 0px;
+}
+/* content4 */
+.content4_anh{
+    display: flex;
+    justify-content: center;    
+}
+.content4_img{
+    height: 374px;
+    object-fit: cover;
+    border-radius: 50px;
+}

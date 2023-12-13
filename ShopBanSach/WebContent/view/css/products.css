@@ -1,0 +1,139 @@
+.container-fluid{
+    background-color: #b67f1c12;
+}
+.list-group-item{
+    background-color: #ce80080a;
+}
+
+/* BANNER */
+.banner{
+    height: 350px;
+}
+.banner_img{
+    width: 400px;
+}
+.banner_txt-content{
+    font-size: 18px;
+}
+
+/* PRODUCT */
+
+.card{
+    max-width: 200px !important;
+}
+/* .btn-search{
+	border: none;
+    background: transparent;
+    transform: translateX(-189%);
+}
+
+.btn-confirm{
+    transform: translateX(-33%);
+}
+
+.option-filter-item{
+    background-color: #faf6ef;
+} */
+.nav-link{
+    cursor: pointer;
+    color: black;
+}
+
+.product_title{
+    border-bottom: 3px solid #8a8383;
+}
+
+.card-img-top{
+    height: 200px;
+}
+.card-title{
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product_price-current{
+    color: #C92127;
+    font-size: 20px;
+}
+.fa-truck{
+    color: #0d5f0d;
+}
+.card:hover{
+    opacity: 0.8;
+    transform: translateY(10px);
+    transition: 0.3s ease-in;
+}
+.option_search{
+    margin-top: 30%;
+    margin-right: 10%;
+}
+
+/* SORT BY PRICE */
+
+.btn-sort,.btn-sort:hover, .btn-sort:focus{
+    background-color: white;
+}
+.dropdown-item{
+    cursor: pointer;
+}
+.dropdown-item:hover{
+    font-weight:500;
+}
+
+.dropdown-menu{
+    width: 170px;
+}
+
+.fa-check{
+    margin-left: 10px;
+    display: none;
+}
+.fa-check-show{
+    display: inline-block;
+}
+
+.dropdown-item a{
+    text-decoration: none;
+    color: black;
+}
+/* PRODUCT DETAIL */
+
+
+.product_detail-img{
+    width: 300px;
+    height: 300px;
+}
+.product_detail-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+.product_detail-author, .product_detail-type{
+    font-size: 17px;
+    width: 400px;
+}
+.product_detail-rating-price{
+    width: 400px;
+}
+.fa-star{
+    cursor: pointer;
+}
+.product_detail-description-txt{
+    text-align: justify ;
+    margin-right: 20px;
+}
+.product_detail-amount{
+    font-size: 15px;
+}
+.product_detail-amount-num{
+    width: 50px;
+    margin: 0 15px;
+    text-align: center;
+}
+.fa-minus, .fa-plus{
+    cursor: pointer;
+}
+.product_detail-amount-num{
+    border-radius: 4px;
+}

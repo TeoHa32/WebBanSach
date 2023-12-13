@@ -1,0 +1,208 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #D9D9D9;
+    padding: 60px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+.left-content{
+    background-color: #D9D9D9;
+    padding: 10px;
+    width: 200px;
+    float: left;
+    height: 100vh;
+}
+.left-content ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.left-content ul li{
+    margin-bottom: 10px;
+    
+}
+.left-content ul li a{
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+#txtsearch {
+    margin-left: 27%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 10px;
+    width: 330px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  #btsearch {
+    padding:10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border-bottom: 2px solid black;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+.right-content{
+    margin-left: 220px;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td{
+    padding: 10px;
+    text-align: left;
+}
+
+table th{
+    background-color: #f4f4f4;
+    font-weight: bold;
+    
+}
+table td{
+    border-bottom: 1px solid #ccc;
+    max-width: 200px;
+}
+form{
+    border: 2px;
+    background-color: #EBE7E4;
+    border-radius: 10px;
+     display: flex;
+     flex-wrap: wrap;
+
+  
+}
+.form div.flex , div.block{
+    padding: 10px 20px;
+}
+.form div.flex {
+    flex-basis: 20%;
+}
+
+.form div.block{
+    width: 100%;
+} 
+.form div input[type="text"],
+.form div input[type="number"],
+.form div input[type="password"]{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    border: 2px solid black;
+}
+.form div label{
+    display: block;
+    font-size: 18px;
+}
+textarea{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+form button.btnAdd , button.btnEdit{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #0355A1;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    display: block;
+}
+.choose{
+    margin-top: 10px;
+    width: 220px;
+    background-color: white;
+    border: 2px solid black;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.choose span{
+    background-color: black;
+    color: white;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+.img{
+    margin-bottom: 20px;
+}
+.show-img{
+    margin-left: 70px;
+    width: 100px;
+    margin-top: 10px;
+    
+}
+.show-img img{
+    max-width: 100%;
+}
+
+select{
+    margin-top: 10px;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-delete{
+	width: 20px;
+	
+}
+button.delete{
+	width: 20px;
+	background: white;
+	border:none;
+}
+button.delete i{
+	font-size: 25px;
+	transition: all 0.5s;
+}
+button.delete:hover i{
+	color: blue;
+	cursor: pointer;
+}
+a i {
+	color:black;
+	font-size: 25px;
+	transition: all 0.5s;
+}
+.edit{
+	margin-right:10px;
+}
+.edit a:hover i{
+	color: blue;
+}
+.table{
+	height: 200px; /* Đặt chiều cao mong muốn */
+  overflow: auto;
+}
+  
