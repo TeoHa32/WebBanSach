@@ -21,15 +21,10 @@
     <link rel="icon" type="image/x-icon" href="/ShopBanSach/view/image/icon.png">
 </head>
 <style>
-	table {
-/*     	width: 100px; */
-    	overflow-y: scroll;
+	.tableContainer{
+		height:300px;
+		overflow: scroll;
 	}
-table::-webkit-scrollbar {
-  width: 100px;
-}
-table::-webkit-scrollbar-track{
-background-color:red;}
 
 </style>
 <body>
@@ -57,7 +52,7 @@ background-color:red;}
 
 	<% int i= 0; int id = 0; int sl=1; int stt = 0, k=0, tong = 0; int id_sl = 0,dem =0;
 	if(od.size() >0){ // ngoặc 2 %>
-	<div class="container-fluid ">
+	<div class="container-fluid tableContainer">
 		<table class="table table-hover" border="1">
 		 <thead class="table-dark"> 
 			<tr>
