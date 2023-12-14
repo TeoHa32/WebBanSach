@@ -118,6 +118,7 @@ background-color:red;}
 				}
 				else { out.print("chưa xác nhận | "); %>
 				<a onclick="chuyentrang(<%=o.getOd().getId()%>)" >Huỷ đơn</a>
+				<!-- áaxax -->
 				<% } %>
 			 </td>
 				<td rowspan='<%= sl%>'><%if(!o.getOd().getDiachinhanhang().equals("")) 
