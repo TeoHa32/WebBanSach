@@ -23,8 +23,8 @@
         <div class="content-user-banner">
                 <div class="menu-profile">
 					<ul>
-                    <li> <a href="profile.jsp?page=myProfile">Thông tin tài khoản</a></li>
-                    <li> <a href="profile.jsp?page=changePassword">Đổi mật khẩu </a></li>
+                    <li> <a class="button" href="profile.jsp?page=myProfile">Thông tin tài khoản</a></li>
+                    <li> <a class="button" href="profile.jsp?page=changePassword">Đổi mật khẩu </a></li>
                     </ul>
 				</div>
             </div>

@@ -34,7 +34,7 @@ public class accountServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
-			switch(action) {
+		switch(action) {
 			case "Đăng nhập": this.doSignIn(req, resp); break;
 			case "Đăng ký" : this.doSignUp(req,resp); break;
 			case "Đăng xuất" : this.doLogout(req, resp); break;
@@ -42,8 +42,8 @@ public class accountServlet extends HttpServlet {
 			case "Xác nhận": this.forgotPassword(req, resp); break;
 			case "Cập nhật" : this.changProfile(req,resp); break;
 			default: this.doPost(req, resp);
-			}
 		}
+	}
 	private void changProfile(HttpServletRequest req, HttpServletResponse resp) {
 	}
 	private void doLogout(HttpServletRequest req, HttpServletResponse resp) {
@@ -86,12 +86,12 @@ public class accountServlet extends HttpServlet {
 			msg.addHeader("Content-type", "text/HTML;charset=UTF-8");
 			msg.setFrom(from);
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-			msg.setSubject("OTP lấy lại mật khẩu");
+			msg.setSubject("OTP láº¥y láº¡i máº­t kháº©u");
 			msg.setSentDate(new Date());
-			msg.setText("Mã OTP : "+OTP,"UTF-8");
+			msg.setText("MÃ£ OTP : "+OTP,"UTF-8");
 			resp.setContentType("text/plain");
             resp.setCharacterEncoding("UTF-8");
-            resp.getWriter().write("Mã OTP đã được gửi đến " + email);
+            resp.getWriter().write("MÃ£ OTP Ä‘Ã£ Ä‘Æ°á»£c gá»­i Ä‘áº¿n " + email);
 			Transport.send(msg);
 			
 			}catch(Exception e){
@@ -118,7 +118,7 @@ public class accountServlet extends HttpServlet {
 			req.setAttribute("email", email);
 			req.setAttribute("password", password);
 			req.setAttribute("MaOTP", MaOTP);
-			req.setAttribute("error", "Mã OTP không chính xác");
+			req.setAttribute("error", "MÃ£ OTP khÃ´ng chÃ­nh xÃ¡c");
 			req.getRequestDispatcher("/view/forgot-password.jsp").forward(req, resp);
 		}
 	}
@@ -148,7 +148,7 @@ public class accountServlet extends HttpServlet {
 		req.setAttribute("re_password", username);
 		req.setAttribute("address", password);
 		req.setAttribute("phone", phone);
-		req.setAttribute("error", "Sô điện thoại đã được đăng ký!");
+		req.setAttribute("error", "SÃ´ Ä‘iá»‡n thoáº¡i Ä‘Ã£ Ä‘Æ°á»£c Ä‘Äƒng kÃ½!");
 		req.getRequestDispatcher("/view/register.jsp").include(req, resp);
 		}
 	}else{
@@ -159,7 +159,7 @@ public class accountServlet extends HttpServlet {
 		req.setAttribute("re_password", username);
 		req.setAttribute("address", password);
 		req.setAttribute("phone", phone);
-		req.setAttribute("error", "Email này đã được đăng ký!");
+		req.setAttribute("error", "Email nÃ y Ä‘Ã£ Ä‘Æ°á»£c Ä‘Äƒng kÃ½!");
 		req.getRequestDispatcher("/view/register.jsp").include(req, resp);
 			}
 		}
@@ -172,7 +172,7 @@ public class accountServlet extends HttpServlet {
 		req.setAttribute("re_password", username);
 		req.setAttribute("address", password);
 		req.setAttribute("phone", phone);
-		req.setAttribute("error", "Tên đăng nhập đã tồn tại!");
+		req.setAttribute("error", "TÃªn Ä‘Äƒng nháº­p Ä‘Ã£ tá»“n táº¡i!");
 		req.getRequestDispatcher("/view/register.jsp").include(req, resp);
 	}
 	}
@@ -214,13 +214,13 @@ public class accountServlet extends HttpServlet {
 		} else {
 			req.setAttribute("username", username);
 			req.setAttribute("password", password);
-			req.setAttribute("error", "Sai mật khẩu");
+			req.setAttribute("error", "Sai máº­t kháº©u");
 			req.getRequestDispatcher("/view/login.jsp").include(req, resp);
 		}
 		} catch(Exception  e) {
 			req.setAttribute("username", username);
 			req.setAttribute("password", password);
-			req.setAttribute("error", "Sai tên đăng nhập");
+			req.setAttribute("error", "Sai tÃªn Ä‘Äƒng nháº­p");
 			req.getRequestDispatcher("/view/login.jsp").include(req, resp);
 		}
 	}
