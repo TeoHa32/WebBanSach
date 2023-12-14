@@ -39,7 +39,14 @@
 <body>
 <%
 	String txtsearch = null;
-	int id_loaisp = 0, sapxep = 0, high_to_low = 0;
+	int id_loaisp = 0, sapxep = 0, high_to_low = 0, sapxepsanpham = 0; 
+	String gia = null;
+	if(request.getAttribute("gia")!=null){
+		gia = request.getAttribute("gia").toString();;
+	}
+	if(request.getAttribute("sapxepsanpham")!=null){
+		sapxepsanpham = 1;
+	}
 	if(request.getAttribute("txtsearch")!=null){
 		txtsearch = request.getAttribute("txtsearch").toString();
 	}
@@ -73,12 +80,6 @@
     	start =Integer.parseInt(request.getAttribute("int_page").toString())*(int)sosp-(int)sosp+1;
     	end = (int)sosp*int_page;
     }
-    
-  //  request.setAttribute("truyen", "áccs");
-   // ObjectMapper objectMapper = new ObjectMapper();
-    //objectMapper 
-    //request.setAttribute("yourList", li);
-   	//ObjectMapper 
 %>
 <%@include file="/view/template/header.jsp" %>
     <!-- BANNER -->
@@ -105,8 +106,12 @@
                             <h5>Tìm kiếm nâng cao</h5>
                         </div>
 						<div class="option_search-list">
-						<form action="/ShopBanSach/timkiemnangcao" method="post">
+						<form action="<% if(txtsearch !=null)
+							out.print("/ShopBanSach/timkiemnangcao");
+						else out.print("/ShopBanSach/filterServlet");
+						%>" method="post">
 							 <input type="hidden" name ="txtsearch" value ="<%=txtsearch %>"> 
+							 <input type="hidden" name ="txtloai" value ="<%=id_loaisp %>"> 
 	                            <ul class="list-group list-group-flush d-flex option-filter">
 	                                <li class="list-group-item option-filter-item">
 	                                    <div class="form-check mt-2 ">
@@ -144,7 +149,7 @@
                             	<%if(cat!=null){
                             		for (sub_category sub_ca : cat){
                             	%>
-                            	<li><a class="dropdown-item" href="../products/loai?id=<%=sub_ca.getId()%>"><%=sub_ca.getName() %></a></li>
+                            	<li><a class="dropdown-item" href="/ShopBanSach/products/loai?id=<%=sub_ca.getId()%>"><%=sub_ca.getName() %></a></li>
                             	<%	}
                             	}
                             	%>
@@ -264,9 +269,11 @@
 			              <ul class="pagination align-self-center pt-5">
 			              <%
 			              if(int_page >1){ %>
-			            	    <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && high_to_low == 0 && sapxep ==0)
-			            	    	
+			            	    <li class="page-item"><a class="page-link" href="<%
+			            	    if(click_loaisp == 1 && id_loaisp!=0 && high_to_low == 0 && sapxep ==0 && sapxepsanpham == 0)
 			            	    	out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page-1));
+			            	    else if(sapxepsanpham != 0)
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page-1));
 			            	    else if(sapxep != 0){ 
 			            	    	if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page-1));
@@ -287,6 +294,8 @@
 			              else {%>
 			            	  <li class="page-item disabled"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0) 
 			            		  out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1));
+			            	  else if(sapxepsanpham != 0)
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
 			            	  else if(sapxep != 0){
 			            		  if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));
@@ -308,6 +317,8 @@
 			            	  
 		                        <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 		                        	out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(i+1));
+		                        else if(sapxepsanpham != 0)
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(i+1));
 		                        else if(sapxep !=0 ){
 		                        	if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(i+1));
@@ -327,6 +338,8 @@
 			              	if(int_page >= tongtrang){%> 
 			              		<li class="page-item disabled"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 			              			out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1)); 
+			              		else if(sapxepsanpham != 0)
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
 			              		else if(sapxep !=0){
 			              			if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));
@@ -345,6 +358,8 @@
 			              	else {%> 
 			               <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 			            	   out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1));
+			               else if(sapxepsanpham != 0)
+		            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
 			               else if(sapxep !=0 ){
 			            	   if(id_loaisp!=0)
 		            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));

@@ -55,11 +55,11 @@ background-color:red;}
 				
 %>
 
-	<% int i= 0; int id = 0; int sl=1; int stt = 0, k=0, tong = 0; int id_sl = 0;
+	<% int i= 0; int id = 0; int sl=1; int stt = 0, k=0, tong = 0; int id_sl = 0,dem =0;
 	if(od.size() >0){ // ngoặc 2 %>
 	<div class="container-fluid ">
 		<table class="table table-hover" border="1">
-		<thead class="table-dark">
+		 <thead class="table-dark"> 
 			<tr>
 				<th>Đơn hàng</th>
 				<th>Sản phẩm</th>
@@ -72,25 +72,28 @@ background-color:red;}
 				<th>Tổng tiền</th>
 				<!-- <td >Tổng tiền</td> -->
 			</tr>
-		</thead>
+		 </thead> 
 		<% for(orderDetail o : od){ 
+			dem++;
 			if(o.getOd().getUser_id().equals(u.getUsername())){
 			
 			// ngoặc3%>
-			<tbody>
-			<tr>
+			<!-- <tbody> -->
+			<!-- <tr> -->
 			
-			<% if(id != o.getOrder_id()){
-				
-				i = 0;
+			<% if(id != o.getOrder_id()){%>
+				<tbody>
+				<% i = 0;
 				stt++;
 				sl=0;
-			 }
-			if(i == 0) {
+			 }%>
+			 <tr>
+			<% if(i == 0) {
 				id = o.getOrder_id();
 				for(orderDetail ode : od){
 					if(id == ode.getOrder_id())
 					{
+						 
 						sl++;
 						tong+= ode.getQuantity()*ode.getPrice();
 						ship = Integer.parseInt(o.getOd().getShipping_method());
@@ -100,6 +103,8 @@ background-color:red;}
 				i++;
 				k=sl;
 			%>
+			
+			
 			<td rowspan='<%= sl%>'>đơn hàng <%=stt %></td>
 			<%}  
 			if(id == o.getOrder_id()){%>
@@ -132,8 +137,12 @@ background-color:red;}
 			
 			<!-- <td rowspan="3">Tổng tiền</td> -->
 		</tr>
-		</tbody>
-		<% }
+		
+		<!-- </tbody> -->
+		<% if(dem==sl){%>
+			</tbody>
+			<%}
+		}
 		} //ngoặc3
 		//ngoặc 2
 	}%> 

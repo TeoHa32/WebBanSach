@@ -10,6 +10,7 @@ public class DBconnect {
 		String name="root";
 		String pass="";
 		try {
+			//Class.forName("com.mysql.cj.jdbc.Driver");
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookshop",name,pass);
 			/* System.out.println("thanh cong"); */

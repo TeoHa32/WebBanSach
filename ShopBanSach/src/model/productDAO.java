@@ -16,6 +16,9 @@ public class productDAO {
 
 	
 	public List<product> getAll(){
+		if(conn !=null) {
+			DBconnect.closeConnection(conn);
+		}
 		List<product> list = new ArrayList<product>();
 		String query = "select * from products";
 		
@@ -48,6 +51,9 @@ public class productDAO {
 	
 	//Tìm kiếm sản phẩm theo tên
 	public List<product> searchByName(String input){
+		if(conn !=null) {
+			DBconnect.closeConnection(conn);
+		}
 		List<product> list = new ArrayList<product>();
 		String query = "select * from products where products.name like '%" +input+" %'";
 		
@@ -142,6 +148,9 @@ public class productDAO {
 	}
 	
 	public List<product> getAllByCategory(int id){
+		if(conn !=null) {
+			DBconnect.closeConnection(conn);
+		}
 		List<product> list = new ArrayList<product>();
 		String query = "select * from products where Sub_category_id = " + id;
 		
