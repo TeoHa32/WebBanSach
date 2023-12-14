@@ -10,13 +10,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trang history</title>    
+    <title>Lịch sử đơn hàng</title>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="../image/icon.png">
     <link rel="stylesheet" href="../view/css/history.css">  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/ShopBanSach/view/image/icon.png">
 </head>
+<style>
+	table {
+/*     	width: 100px; */
+    	overflow-y: scroll;
+	}
+table::-webkit-scrollbar {
+  width: 100px;
+}
+table::-webkit-scrollbar-track{
+background-color:red;}
+
+</style>
 <body>
 	<%@include file="/view/template/header.jsp" %> <hr>
 	<div class="title mt-5 mb-5">

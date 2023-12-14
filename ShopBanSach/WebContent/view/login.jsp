@@ -13,26 +13,32 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/ShopBanSach/view/image/icon.png">
 </head>
 <body>
-
-    <div id="wrapper">
-        <!-- HEADER -->
-        <%@include file="/view/template/header.jsp" %>
-        <div id="wpcontent-user">
+    <%@include file="/view/template/header.jsp" %>
+    <div id="wrapper" class="pt-5">
+        <div id="wpcontent-user" class="mx-5 ">
 		<c:choose>
     <c:when test="${not empty sessionScope.user}">
         <h2>Bạn đã đăng nhập rồi!!</h2>
     </c:when>
     <c:otherwise>
-        <div class="content-user-banner">
+        <div class="content-user-banner d-flex justify-content-between">
                 <div class="banner-user">
 					<img
 						src="<%if( request.getContextPath()!=null) out.print(request.getContextPath()); %>/view/image/login.png"
 						alt="">
 				</div>
             </div>
-            <div class="content-user-form ">
+            <div class="content-user-form mx-5">
                 
                 <form action="/ShopBanSach/accountServlet" method="post">
                     <h1>Đăng nhập</h1>
@@ -56,7 +62,7 @@
                     </div>
                     <div class="btn-user"><input type="submit" name="action" value="Đăng nhập"></div>
                 </form>
-                <div class="user-bottom">
+                <div class="user-bottom pt-3">
                     <div class="forgot-password"><a href="/ShopBanSach/view/forgot-password.jsp">Quên mật khẩu?</a></div>
                     <div class="register-link"><a href="/ShopBanSach/view/register.jsp">Đăng ký</a></div>
                 </div>

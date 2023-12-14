@@ -13,9 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ICON -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/x-icon" href="../image/icon.png">
-     <link rel="stylesheet" href="../css/main1.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="/ShopBanSach/view/image/icon.png">
+     <link rel="stylesheet" href="/ShopBanSach/view/css/main1.css">
+    <link rel="stylesheet" href="/ShopBanSach/view/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -29,7 +29,7 @@
 
     <div class="container p-5 d-flex w-100">
 
-        <img src="../image/contact1.png" alt="" class="contact_img rounded-start-3">
+        <img src="/ShopBanSach/view/image/contact1.png" alt="" class="contact_img rounded-start-3">
         <form action="" class="contact_form border border-2 d-flex flex-column rounded-end-3 px-3 border-start-0">
             <h3 class="contact_form-text pt-5 pb-4 text-center">THÔNG TIN LIÊN HỆ</h3>
 

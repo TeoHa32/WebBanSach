@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 
-        <div id="footer">
+        <div id="footer" >
             <div class="footer-center">
             <div class="box follow">
                 <div class="box-head">THEO DÕI TRÊN</div>

@@ -15,7 +15,7 @@
                 
                     <div>
                         <label for="username">Tên đăng nhập</label>
-                        <label  ><%if(u.getUsername() !=null) out.print(u.getUsername()); %></label>
+                        <input type="text" name="username" id="username"  value="<%if(u.getUsername() !=null) out.print(u.getUsername()); %>" >
                     </div>
                    <div>
                         <label for="email">Email</label>
@@ -26,7 +26,7 @@
                         <input type="text" name="phone" id="phone"  value="<%if(u.getPhone() !=null) out.print(u.getPhone()); %>" >
                     </div>
                     <div>
-                        <label for="address">Địa chỉ</label>
+                       <label for="address">Địa chỉ</label>
                         <input type="text" name="address" id="address"  value="<%if(u.getAddress() !=null) out.print(u.getAddress()); %>">
                     </div>
                     <div class="btn-user"><input type="submit" name="action" value="Cập nhật"></div>

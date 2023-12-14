@@ -45,7 +45,6 @@ public class accountServlet extends HttpServlet {
 			}
 		}
 	private void changProfile(HttpServletRequest req, HttpServletResponse resp) {
-		String 
 	}
 	private void doLogout(HttpServletRequest req, HttpServletResponse resp) {
 		try {

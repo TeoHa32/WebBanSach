@@ -42,7 +42,7 @@ body{
 }
 #header .header-menu .menu li a{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 15px;
     color: black;
 }
@@ -129,7 +129,7 @@ body{
 
 /* NEW-BOOK */
 .container{
-    width: 1020px;
+/*    width: 1020px;*/
     margin: 0px auto;
 
 }
@@ -141,8 +141,8 @@ body{
  .heading{
     text-align: center;
     display: inline-block;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 500;
     border-bottom: 1px solid black;
     margin-bottom: 20px;
 }
@@ -315,17 +315,22 @@ body{
 #wpcontent-user {
     max-width: 100%;
     display: flex;
+    align-items: center;
     margin-bottom: 30px;
     min-height: 342px;
+    padding-left: 7%;
 }
  #wpcontent-user .content-user-banner {
-    flex-basis: 35%;
+/*    flex-basis: 35%;*/
 }
  .content-user-banner .banner-user img{
-    max-width: 100%;
+/*    max-width: 100%;*/
+        width: 500px;
+    height: 500px;
 }
  #wpcontent-user .content-user-form{
-    flex-basis: 65%;
+  flex-basis: 50%;
+  padding-left: 10%;
 }
 #wpcontent-user .content-user-form h1{
     text-align: center;
@@ -333,7 +338,7 @@ body{
     margin: 0;
 }
 #wpcontent-user .content-user-form form{
-    max-width: 45%;
+/*    max-width: 60%;*/
     margin: 0px auto;
     font-size: 17px;
 }
@@ -383,7 +388,7 @@ body{
 #wpcontent-user .content-user-form  .user-bottom{
 
     margin: 0px auto;
-    max-width: 45%;
+    max-width: 80%;
   
     display: flex;
     justify-content: space-between;

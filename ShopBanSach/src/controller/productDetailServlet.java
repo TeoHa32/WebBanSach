@@ -25,15 +25,14 @@ import model.productDAO;
 		"/products/sanpham",
 		"/products/loai",
 		"/products/trang",
-		"/products/tieng-anh",
-		"/products/tieng-nhat",
-		"/products/truyen-tranh",
-		"/products/ky-nang-song",
-		"/products/tieu-thuyet",
-		"/products/truyen-ngan",
+//		"/products/tieng-anh",
+//		"/products/tieng-nhat",
+//		"/products/truyen-tranh",
+//		"/products/ky-nang-song",
+//		"/products/tieu-thuyet",
+//		"/products/truyen-ngan",
 		"/products/low-to-high",
 		"/products/high-to-low",
-		"/products/detail",
 })
 public class productDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -175,13 +174,6 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 			//List<product> products = dao.sortPriceHighToLow(pageid, count );
 			request.setAttribute("high_to_low", 1);
 			//request.setAttribute("products", products);
-			request.getRequestDispatcher("/view/product.jsp").forward(request, response);
-		}
-		else if (uri.contains("detail")){
-			String id = request.getParameter("id");
-			product sp = new product();
-			sp = dao.getDetail(id);
-		//	request.setAttribute("high_to_low", 1);
 			request.getRequestDispatcher("/view/product.jsp").forward(request, response);
 		}
 	}

@@ -5,7 +5,8 @@
   align-items: center;
 }
 .logo-title .title{
-    font-size: 35px;
+    font-size: 30px;
+    margin-bottom: 20px;
     
 }
 
@@ -25,11 +26,11 @@
     height: auto;
 }
 .orderdetail{
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
 }
 .banggia{
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 20px;
 }
 .product-name {

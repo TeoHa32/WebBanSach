@@ -27,6 +27,7 @@
 <style>
 	a{
 		text-decoration:none;
+		
 	}
 	.card{
 		cursor:pointer;
@@ -44,6 +45,9 @@
 	.banner{
 		height: 550px;
 	}
+	.col-3{
+		padding-left: 5%
+	}
 </style>
 <body>
 
@@ -53,16 +57,15 @@
 	request.setAttribute("products", products);
 %>
 
-    <div id="wrapper w-100">
+    <div id="wrapper">
         <%@include file="/view/template/header.jsp" %>
-        <div id="wpcontent">
+        <div id="wpcontent" >
             <div class="banner"><img src="/ShopBanSach/view/image/banner 1.png" alt="">
                 <div class="banner-right">
                     <div class="text">   CHÀO MỪNG BẠN ĐÃ ĐẾN CỬA HÀNG SÁCH CỦA CHÚNG TÔI</div>
-                    <div class="see-more"><a href="">Xem thêm</a></div></div>
-                </div>
-
-            
+                    <div class="see-more"><a href="">Xem thêm</a></div>
+                 </div>
+            </div>
             <div class="container">
                 <div class="heading d-flex align-self-center mx-auto text-center " style="margin-top:150px">SÁCH MỚI</div>
                  <div class="row">
@@ -256,10 +259,10 @@
                             </div>
 	                        </c:forEach>
                         </div>
-            <div class="service mt-5">
-                <div class="service-center">
+          <div class="service mt-5 container">
+             <div class="service-center">
                 <div class="box-service ">
-<div class="box-service-head"><i class="fa-solid fa-truck"></i></div>
+					<div class="box-service-head"><i class="fa-solid fa-truck"></i></div>
                     <div class="box-service-footer">Giao hàng nhanh</div>
                 </div>
                 <div class="box-service">
@@ -273,45 +276,15 @@
             </div>
         </div>
         </div>
-        <div id="footer" >
-            <div class="footer-center">
-            <div class="box follow">
-                <div class="box-head">THEO DÕI TRÊN</div>
-                <div class="box-footer">
-                <div class="facebook"><a href=""><i class="fa-brands fa-facebook"></i></a></div>
-                <div class="intasgram"><a href=""><i class="fa-brands fa-instagram"></i></a></div>
-                <div class="amazon"><a href=""><i class="fa-brands fa-amazon"></i></a></div>
-                </div>
-            </div>
-            <div class="box contact">
-                <div class="box-head">LIÊN HỆ</div>
-                <div class="box-footer">
-                    <form action="">
-                        <input type="text" name="contact" placeholder="Nhập Email...">
-                    <button>
-                        <i class="fa-solid fa-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="box hyper-link">
-                <div class="box-head">LIÊN KẾT</div>
-                <div class="box-footer">
-                    <div><a href="">Chính sách bảo mật</a></div>
-                    <div><a href="">Điều kiện và điều khoản</a></div>
-                    <div><a href="">Tham gia cùng chúng tôi</a></div>
-
-                </div>
-            </div>
-        </div>
-        </div>
     </div>
  </div>
+<%@include file="/view/template/footer.jsp" %>
  <!--  <script src="/ShopBanSach/view/js/product.js"></script> -->
     <script src="/ShopBanSach/view/js/account.js"></script>
     <script src="/ShopBanSach/view/js/product.js"></script>
     <script >
     function myfunction(img, name, price,publisher, description,author,id ){
-    	document.getElementById('img').src =  "../view/image/"+img
+    	document.getElementById('img').src =  "/ShopBanSach/view/image/"+img
     	document.getElementById('name').innerText = name
     	document.getElementById('publisher').innerText = publisher
     	document.getElementById('author').innerText = author

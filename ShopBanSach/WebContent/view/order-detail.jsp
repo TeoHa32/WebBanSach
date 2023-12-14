@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style-order-detail.css">
     <script src="./js/main-order-detail.js"></script>
+    <link rel="icon" type="image/x-icon" href="/ShopBanSach/view/image/icon.png">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
@@ -89,7 +90,7 @@
                                             </th>
                                             <td colspan="2">
                                                 <div class="d-flex">                                        
-                                                    <img class="img-thumbnail" src="../view/image/<%=c.getImg()%>" alt="Ảnh sản phẩm" width="100" height="80">
+                                                    <img class="img-thumbnail" src="/ShopBanSach/view/image/<%=c.getImg()%>" alt="Ảnh sản phẩm" width="100" height="80">
                                                     
                                                     <div>
                                                         <p class="mb-0"><%=c.getName() %></p>
@@ -117,7 +118,7 @@
                             	%>                    						                
                             </tbody>                            
                         </table>
-                        <form action="../products/cap1">
+                        <form action="../products/sanpham">
 							<button type="submit" class="btn btn-outline-danger">Tiếp tục mua hàng</button>
 						</form>
                     </div>
@@ -142,8 +143,8 @@
                 }
                 
                 %>
-                <form action="<%=url %>" method="get">
-                <div class="col-4 p-4 align-items-center orderdetail-title">
+                <form action="<%=url %>" method="get" class="col-4 ">
+                <div class="p-4 align-items-center orderdetail-title">
                     <div class="orderdetail">
                         <p>CHI TIẾT HÓA ĐƠN</p>
                     </div> 
@@ -166,18 +167,6 @@
                    		<%}
             			
             			}%> 
-                    
-                                        
-                   
-                   <!--  <div class="d-flex banggia">
-                        <div class="product-name">Sản phẩm 1</div>
-                        <div class="price">1000$</div>
-                    </div>
-                    <div class="d-flex banggia">
-                        <div class="product-name">Sản phẩm 1</div>
-                        <div class="price">1000$</div>
-                    </div>
-                     -->
                     <hr>
                     <div class="d-flex banggia">
                         <div class="product-name">Khuyến mãi</div>

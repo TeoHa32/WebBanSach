@@ -177,6 +177,7 @@
                         </div>                       	
                         <!-- Sản phẩm -->
                         <div class="row" >
+                        		<h4 class="text-center text-danger">${error}</h4>
 						<c:forEach items="${products}" var="product" begin="<%=start -1%>" end="<%=end-1 %>">
 	                        	 <div class="col-3 product">
 									 <button data-bs-toggle="modal" data-bs-target="#product" class="card mt-5 mota" onclick="myfinction('${product.img }', '${product.name }','${product.price }','${product.publisher }','${product.description }','${product.author }','${product.id }')" >
@@ -201,7 +202,7 @@
 	                                <div class="modal fade" id="product">
 	                                    <div class="modal-dialog">
 	                                        <div class="modal-content pb-5" style="width: 800px; transform: translateX(-22%); margin-top: 15%;">
-												<h1>${message }</h1>
+										
 	                                            <!-- Modal Header -->
 	                                            <div class="modal-header">
 	                                                <h4 class="modal-title">Chi tiết sản phẩm</h4>
@@ -236,7 +237,7 @@
 	                                                        </div>
 	                                                        <div class="product_detail-description">
 	                                                            <b>Mô tả ngắn: </b>
-															<div class="product_detail-description-txt">${sp.description}</div>
+															<div class="product_detail-description-txt" id="description"></div>
 	                                                        </div>
 	                                                        <div class="product_detail-action d-flex justify-content-around pt-5">
 	                                                            <div class="product_detail-amount d-flex align-items-center" onclick="amount()">
@@ -372,7 +373,8 @@
     var targetObject = document.getElementById("row");
     targetObject.scrollIntoView({ behavior: 'smooth', block: 'start' });
     	var col = <%=int_page %>;
-    	document.getElementById(col).style.backgroundColor = "red"
+    	document.getElementById(col).style.backgroundColor = "blue"
+    	document.getElementById(col).style.color = "white"
         var firstTabEl = document.querySelector('#myTab li:last-child a')
         var firstTab = new bootstrap.Tab(firstTabEl)
         firstTab.show()
@@ -386,6 +388,7 @@
         	document.getElementById('author').innerText = author
         	document.getElementById('price').innerText = price
         	document.getElementById('id_add').value = id
+        	document.getElementById('description').innerHTML = description
         	console.log(img, name, price);
         }
         function soluong() {

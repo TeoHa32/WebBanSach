@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
  <div id="header">
-            <div class="logo"><a href="/ShopBanSach/view/index.jsp"><img class="img-logo" src="<%if( request.getContextPath()!=null) out.print(request.getContextPath()); %>/view/image/logo.png" alt=""></a></div>
+            <div class="logo"><a href="/ShopBanSach/view/index.jsp"><img class="img-logo" src="<%if( request.getContextPath()!=null) out.print(request.getContextPath()); %>/view/image/logo.jpg" alt=""></a></div>
             <div class="header-menu">
                 <ul class="menu">
                     <li><a href="/ShopBanSach/view/index.jsp">Trang chủ</a></li>
@@ -46,7 +46,7 @@
                 		out.print("<div id='myDropdown' class='dropdown-content'>");
                 		out.print("<div class='user-content'><span><a href='/ShopBanSach/view/profile.jsp'>Tài khoản</a></span> <i class='fa-solid fa-user'></i></div>");
                 		out.print("<div class='user-content'><span><a href='/ShopBanSach/view/history.jsp'>Lịch sử đặt hàng</a></span> <i class='fa-solid fa-clock-rotate-left'></i></div>");
-                		out.print("<div class='user-content'><span><a href='/ShopBanSach/accountServlet?action=logout'>Đăng xuất</a></span><i class='fa-solid fa-right-from-bracket'></i></div>");
+                		out.print("<div class='user-content'><span><a href='/ShopBanSach/accountServlet?action=Đăng xuất'>Đăng xuất</a></span><i class='fa-solid fa-right-from-bracket'></i></div>");
                 		out.print("</div>");
                 		out.print("</div>");
                 	}

@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="wrapper">
-       <%@include file="/view/template/header.jsp" %>
+<%--        <%@include file="/view/template/header.jsp" %> --%>
         <div id="wpcontent-user-forgot">
             <div class="forgot-banner">
                 <img src="/ShopBanSach/view/image/fogot-password.png" alt="">
