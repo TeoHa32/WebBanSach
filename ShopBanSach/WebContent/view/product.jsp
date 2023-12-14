@@ -111,7 +111,7 @@
 						else out.print("/ShopBanSach/filterServlet");
 						%>" method="post">
 							 <input type="hidden" name ="txtsearch" value ="<%=txtsearch %>"> 
-							 <input type="hidden" name ="txtloai" value ="<%=id_loaisp %>"> 
+							 <input type="hidden" name ="txtloai" value ="<%=id_loaisp%>"> 
 	                            <ul class="list-group list-group-flush d-flex option-filter">
 	                                <li class="list-group-item option-filter-item">
 	                                    <div class="form-check mt-2 ">
@@ -273,7 +273,7 @@
 			            	    if(click_loaisp == 1 && id_loaisp!=0 && high_to_low == 0 && sapxep ==0 && sapxepsanpham == 0)
 			            	    	out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page-1));
 			            	    else if(sapxepsanpham != 0)
-			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page-1));
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&id="+id_loaisp+"&&id_page="+(int_page-1));
 			            	    else if(sapxep != 0){ 
 			            	    	if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page-1));
@@ -295,7 +295,7 @@
 			            	  <li class="page-item disabled"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0) 
 			            		  out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1));
 			            	  else if(sapxepsanpham != 0)
-			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&id="+id_loaisp+"&&id_page="+(int_page+1));
 			            	  else if(sapxep != 0){
 			            		  if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));
@@ -318,7 +318,7 @@
 		                        <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 		                        	out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(i+1));
 		                        else if(sapxepsanpham != 0)
-			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(i+1));
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&id="+id_loaisp+"&&id_page="+(i+1));
 		                        else if(sapxep !=0 ){
 		                        	if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(i+1));
@@ -339,7 +339,7 @@
 			              		<li class="page-item disabled"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 			              			out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1)); 
 			              		else if(sapxepsanpham != 0)
-			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
+			            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&id="+id_loaisp+"&&id_page="+(int_page+1));
 			              		else if(sapxep !=0){
 			              			if(id_loaisp!=0)
 			            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));
@@ -359,7 +359,7 @@
 			               <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 			            	   out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1));
 			               else if(sapxepsanpham != 0)
-		            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&&id_page="+(int_page+1));
+		            	    	out.print("/ShopBanSach/filterServlet?gia="+gia+"&id="+id_loaisp+"&&id_page="+(int_page+1));
 			               else if(sapxep !=0 ){
 			            	   if(id_loaisp!=0)
 		            	    		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp+"&&id_page="+(int_page+1));
