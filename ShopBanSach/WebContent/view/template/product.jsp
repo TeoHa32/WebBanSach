@@ -7,12 +7,36 @@
     <%@ page import="model.categories" %>
     <%@ page import="java.util.ArrayList" %>
     <%@ page import="java.util.List" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
     
 <div class="right-content">
-        <input type="text" id="txtsearch" />
-        <input type="button" value="Tìm Kiếm" id="btsearch" />
+
+
+	<form action="/ShopBanSach/productServlet" method="POST">
+		<input type="text" id="txtsearch" name="search"/>
+		<button id="btSearch"name="btnSearch">Tìm kiếm</button>
+	</form>
+
+
+    
+<%-- <c:choose>
+  <c:when test="${requestScope.search eq 'true'}">
+    <c:forEach var="product" items="${requestScope.listSearch}">
+        <p>${product.name} - ${product.price}</p>
         
-        <section id="products" >
+        </c:forEach>
+  </c:when>
+  <c:otherwise >
+    
+        <p>không tìm thây</p>
+        
+  </c:otherwise>
+</c:choose>   --%>
+
+<section id="products" >
+       <c:choose>
+  <c:when test="${empty requestScope.search}">
             <div id="table-product" >
                 <div class="table">
                     <table>
@@ -27,6 +51,7 @@
                             <th>Select</th>
                            </tr> 
                         </thead>
+                        
                         <tbody>
                         <% List<product> listProduct = products.loadProduct();
                         int count=0;
@@ -58,6 +83,64 @@
                     </table>
                 </div> 
             </div>
+  </c:when>
+  <c:otherwise>
+    <c:if test="${requestScope.search eq 'true'}">
+   
+    <div id="table-product" >
+                <div class="table">
+                    <table>
+                        <thead>
+                           <tr>
+                    
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Tác giả</th>
+                            <th>Giá sản phẩm</th>
+                            _<th>Số lượng</th>
+                            <th>Category</th> 
+                            <th>Select</th>
+                           </tr> 
+                        </thead>
+                        <tbody>
+                        <c:set var="count" value="${0}" />
+                        <c:forEach var="product" items="${requestScope.listSearch}">
+       			 		<c:set var="count" value="${count+1}" />
+        					<tr>
+                                <td>${count}</td>
+                                <td>${product.name}</td>
+                                <td>${product.author }</td>
+                                <td> ${product.price }</td>
+                                <td>${product.quantity }</td>
+                                <td>${product.category_id }</td>
+                                <td>
+                			<div style='display: flex;'>
+                			<div class='edit'>
+                			<a href="?page=products&id=${product.id} "><i class='fa-solid fa-circle-info'></i></a>
+                			</div>
+                			<div>
+                			<form action='/ShopBanSach/productServlet' class='form-delete' method='POST'>
+                			<input type='hidden' value="${product.id}" name='id'> 
+                			<button class='delete' name='btn-delete'><i class='fa-solid fa-trash'></i> </button>
+                			</form>
+                		</div>
+                			</div>
+                			</td>
+                            </tr>
+    </c:forEach>
+     </tbody>
+                    </table>
+                </div> 
+            </div>
+</c:if>
+<c:if test="${requestScope.search eq 'false'}">
+    <h2>Search Results</h2>
+    
+        <p>my heo</p>
+</c:if>  
+  </c:otherwise>
+</c:choose>
+        
             <%  String idEdit = request.getParameter("id");
             String author = null;
             String name = null;
@@ -215,12 +298,12 @@ document.getElementById("category").addEventListener("change",function(){
 })
     const inputFile = document.querySelector("input[type='file']");
 const button = document.querySelector(".choose");
-button.addEventListener("click", () => {
+button.addEventListener("click", function() {
   inputFile.click();
 });
 const img = document.querySelector(".show-img img");
 
-inputFile.addEventListener("change", () => {
+inputFile.addEventListener("change", function() {
   const file = inputFile.files[0];
   if (file.type.match("image.*")) {
     const src = URL.createObjectURL(file);

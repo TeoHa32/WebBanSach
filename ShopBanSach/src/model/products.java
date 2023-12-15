@@ -9,10 +9,67 @@ import java.util.List;
 
 public class products {
 	public static void main(String[] args) {
-		product p = products.searchProductById(69);
-		p.setOnsale(0);
-		int i = products.updateProduct(p);
-			System.out.println(i);
+	for(product p: products.searchProductByAuthor("Hà Bin dịch")) {
+		System.out.println(p.name);
+	}
+	}
+	public static List<product> searchProductByName(String name){
+		Connection con = DBconnect.getConnection();
+		try {
+			String sql="SELECT * FROM products where name LIKE '%"+name+"%'";
+			Statement stm = con.createStatement();
+			List<product> listProduct = new ArrayList<product>();
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				product p = new product();
+				p.setId(rs.getInt("id"));
+				p.setName(rs.getString("name"));
+				p.setAuthor(rs.getString("author"));
+				p.setPublisher(rs.getString("publisher"));
+				p.setImg(rs.getString("img"));
+				p.setPrice(rs.getFloat("price"));
+				p.setQuantity(rs.getInt("quantity"));
+				p.setDescription(rs.getString("description"));
+				p.setOnsale(rs.getDouble("onsale"));
+				p.setCategory_id(rs.getInt("category_id"));
+				p.setSub_category_id(rs.getInt("Sub_category_id"));
+				listProduct.add(p);
+			}
+			return listProduct;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static List<product> searchProductByAuthor(String author){
+		
+		Connection con = DBconnect.getConnection();
+		try {
+			String sql="SELECT * FROM products where author LIKE '%"+author+"%'";
+			Statement stm = con.createStatement();
+			List<product> listProduct = new ArrayList<product>();
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				product p = new product();
+				p.setId(rs.getInt("id"));
+				p.setName(rs.getString("name"));
+				p.setAuthor(rs.getString("author"));
+				p.setPublisher(rs.getString("publisher"));
+				p.setImg(rs.getString("img"));
+				p.setPrice(rs.getFloat("price"));
+				p.setQuantity(rs.getInt("quantity"));
+				p.setDescription(rs.getString("description"));
+				p.setOnsale(rs.getDouble("onsale"));
+				p.setCategory_id(rs.getInt("category_id"));
+				p.setSub_category_id(rs.getInt("Sub_category_id"));
+				listProduct.add(p);
+			}
+			return listProduct;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	public static List<product> loadProduct(){
 		Connection con = DBconnect.getConnection();
@@ -71,7 +128,7 @@ public class products {
 			int i=stm.executeUpdate(sql);
 			return i;
 		} catch(Exception e) {
-			System.out.println("Lỗi truy vấn");
+			System.out.println("Lá»—i truy váº¥n");
 		}
 		return 0;
 	}

@@ -153,27 +153,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 				request.setAttribute("products", products);
 			}
 			
-//			String pageidStr = request.getParameter("pageid");
-//			int pageid = Integer.parseInt(pageidStr);
-//			int count = 8;
-//			int numrows = dao.numRows();
-//			
-//			int maxPageid = (numrows / count ) ;
-//			
-//			if(pageid ==  1) {
-//				
-//			}
-//			else {
-//				pageid = pageid - 1;
-//				pageid = pageid * count + 1;
-//			}
-//			
-//			request.setAttribute("numpage", Integer.parseInt(pageidStr));
-//			request.setAttribute("maxPageid", maxPageid);
-			
-			//List<product> products = dao.sortPriceHighToLow(pageid, count );
 			request.setAttribute("high_to_low", 1);
-			//request.setAttribute("products", products);
 			request.getRequestDispatcher("/view/product.jsp").forward(request, response);
 		}
 	}

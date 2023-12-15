@@ -45,6 +45,27 @@ public class accountServlet extends HttpServlet {
 		}
 	}
 	private void changProfile(HttpServletRequest req, HttpServletResponse resp) {
+		String username = req.getParameter("username");
+		String email = req.getParameter("email");
+		String phone = req.getParameter("phone");
+		String address = req.getParameter("address");
+		User u = new User();
+		u.setUsername(username);
+		u.setEmail(email);
+		u.setPhone(phone);
+		u.setAddress(address);
+		int i = Users.updateinformation(username, email, phone, address);
+		 try {
+			 	
+				req.getRequestDispatcher("/ShopBanSach/view/template/myProfile.jsp").forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}    
 	}
 	private void doLogout(HttpServletRequest req, HttpServletResponse resp) {
 		try {

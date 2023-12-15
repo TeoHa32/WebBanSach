@@ -149,7 +149,6 @@
 		else{
 			out.print("Đăng nhập để xem lịch sử mua hàng");
 		}
-		
 %>
 	<%@include file="/view/template/footer.jsp" %>
 </body>

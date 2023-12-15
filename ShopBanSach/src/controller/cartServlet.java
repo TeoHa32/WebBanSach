@@ -46,9 +46,9 @@ public class cartServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		try(PrintWriter out = response.getWriter()){
 			ArrayList<cartItem> item = new ArrayList<>();
-			int id = Integer.parseInt(request.getParameter("id"));
-			int slsp = Integer.parseInt(request.getParameter("id_sl"));
-			cartItem ct = new cartItem();
+			int id = Integer.parseInt(request.getParameter("id")); //id sản phẩm
+			int slsp = Integer.parseInt(request.getParameter("id_sl")); //số lượng sản phẩm
+			cartItem ct = new cartItem(); 
 			ct.setId(id);
 			if(slsp > 1)
 				ct.setQuantity(slsp);
@@ -56,15 +56,15 @@ public class cartServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			ArrayList<cartItem> cart_list = (ArrayList<cartItem>)session.getAttribute("cart-list");
-			if (cart_list==null) {
+			if (cart_list==null) { // không có sản phẩm nào trên session
 				//Khong co san pham nao trong cart- Session dc tao
 				item.add(ct);
 				session.setAttribute("cart-list",item);	
 				response.sendRedirect("./products/sanpham");
 			} else {
 				//Da co san pham trong cart				
-				item = cart_list;
-				boolean exist = false;	
+				item = cart_list; // lấy danh sách từ cart_list
+				boolean exist = false; 	
 				//fdffdfdf
 				//Kt sp co ton tai khong
 				for (cartItem c : cart_list) {

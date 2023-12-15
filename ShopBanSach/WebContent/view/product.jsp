@@ -45,7 +45,7 @@
 		gia = request.getAttribute("gia").toString();;
 	}
 	if(request.getAttribute("sapxepsanpham")!=null){
-		sapxepsanpham = 1;
+		sapxepsanpham = 1; /* dùng để phân trang cho việc lọc tìm kiếm nâng cao theo giá */
 	}
 	if(request.getAttribute("txtsearch")!=null){
 		txtsearch = request.getAttribute("txtsearch").toString();
@@ -107,10 +107,10 @@
                         </div>
 						<div class="option_search-list">
 						<form action="<% if(txtsearch !=null)
-							out.print("/ShopBanSach/timkiemnangcao");
+							out.print("/ShopBanSach/timkiemnangcao"); /* tìm kiếm khi đã nhập từ khóa */
 						else out.print("/ShopBanSach/filterServlet");
 						%>" method="post">
-							 <input type="hidden" name ="txtsearch" value ="<%=txtsearch %>"> 
+							 <input type="hidden" name ="txtsearch" value ="<%=txtsearch %>">  
 							 <input type="hidden" name ="txtloai" value ="<%=id_loaisp%>"> 
 	                            <ul class="list-group list-group-flush d-flex option-filter">
 	                                <li class="list-group-item option-filter-item">
@@ -140,7 +140,7 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                     	<% ArrayList<category> ca = categories.loadCategories();
                  		if(ca != null){ 
-                 			for (category c : ca){ 
+                 			for (category c : ca){ //mục lớn 
                  				 ArrayList<sub_category> cat = categories.loadSubCategories(c.getId());
                  			%>	
                  				 <li class="nav-item" role="presentation">
@@ -166,7 +166,7 @@
                             <button type="button" class="btn btn-sort dropdown-toggle border border-2 " data-bs-toggle="dropdown"> Sắp xếp theo giá</button>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-item sort_low-to-high">
-                                 <a href="<%if(id_loaisp == 0)
+                                 <a href="<%if(id_loaisp == 0) // kiểm tra đã có chọn loại sp chưa 
                                 	 out.print("/ShopBanSach/products/low-to-high?sort=1");
                                  	else 
                                  		out.print("/ShopBanSach/products/low-to-high?sort=lowtohigh&id="+id_loaisp);
@@ -286,8 +286,6 @@
 			            		  else
 			            	    	out.print("/ShopBanSach/products/high-to-low?sort=1"+"&&id_page="+(int_page-1));
 			            	    }
-			            	    	
-			            	   
 			            	    else out.print("/ShopBanSach/products/trang?id_page="+(int_page - 1));   %>"><i class="fa-solid fa-chevron-left"></i></a></li>
 					          	
 					            <%  }
@@ -312,7 +310,6 @@
 			            	  <i class="fa-solid fa-chevron-left"></i></a></li> 
 			              
 			            <%   }
-			   
 			                for(int i = 0; i < tongtrang; i++){%> 
 			            	  
 		                        <li class="page-item"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
@@ -334,7 +331,6 @@
 									 else out.print("/ShopBanSach/products/trang?id_page="+(i+1));   %>" id ="<%= i + 1 %>" ><%=i+1%></a></li>
 		                      
 			             <%}
-		               		
 			              	if(int_page >= tongtrang){%> 
 			              		<li class="page-item disabled"><a class="page-link" href="<% if(click_loaisp == 1 && id_loaisp!=0 && sapxep == 0 && high_to_low == 0)
 			              			out.print("/ShopBanSach/products/loai?id="+id_loaisp+"&&id_page="+(int_page+1)); 
@@ -397,7 +393,7 @@
         var firstTab = new bootstrap.Tab(firstTabEl)
         firstTab.show()
         function myfinction(img, name, price,publisher, description,author,id ){
-        	document.getElementById('img').src =  "../view/image/"+img
+        	document.getElementById('img').src =  "/ShopBanSach/view/image/"+img
         	document.getElementById('name').innerText = name
         	document.getElementById('publisher').innerText = publisher
         	document.getElementById('author').innerText = author

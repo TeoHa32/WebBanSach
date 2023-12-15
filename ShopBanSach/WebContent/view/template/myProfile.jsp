@@ -4,11 +4,13 @@
 
                     <h1>Thông tin tài khoản</h1>
                     <%
+                    HttpSession ses = request.getSession();
                     User u = new User();
-                    if(s!=null){
-                    	if(s.getAttribute("user")!=null){
-                    		u = (User)s.getAttribute("user");
+                    if(ses!=null){
+                    	if(ses.getAttribute("user")!=null){
+                    		u = (User)ses.getAttribute("user");
                     	}
+                    	out.print(u.getName());
                     } %>
                     
                 <p class="error">${error } </p>
@@ -29,5 +31,14 @@
                        <label for="address">Địa chỉ</label>
                         <input type="text" name="address" id="address"  value="<%if(u.getAddress() !=null) out.print(u.getAddress()); %>">
                     </div>
-                    <div class="btn-user"><input type="submit" name="action" value="Cập nhật"></div>
+                    <div class="btn-user"><input type="submit" name="action" value="Cập nhật" onsubmit="return confirmSubmit()"></div>
                 </form>
+                <script>
+        function confirmSubmit() {
+            // Hiển thị hộp thoại xác nhận
+            var result = confirm('bạn có muốn thay đổi không ?');
+
+            // Trả về kết quả xác nhận, true nếu người dùng nhấn "OK", ngược lại là false
+            return result;
+        }
+    </script>

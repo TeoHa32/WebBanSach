@@ -51,7 +51,7 @@ public class filterServlet extends HttpServlet {
 		 }
 		
 		if (request.getParameter("gia") != null) {
-			 Products = dao.getAll();
+			// Products = dao.getAll();
 			if (gia.equals("tren")) {
 				for (product c : Products) {
 					if (c.getPrice() > 100000)
@@ -104,7 +104,6 @@ public class filterServlet extends HttpServlet {
 			}
 		}
 
-		System.out.println(Products.size());
 		if (request.getParameter("gia") != null) {
 			if (gia.equals("tren")) {
 				for (product c : Products) {
@@ -122,12 +121,12 @@ public class filterServlet extends HttpServlet {
 		if (products.size() == 0) {
 			request.setAttribute("error", "Không tìm thấy sản phẩm!");
 		} else
-			request.setAttribute("sapxepsanpham", 1);
-		if (request.getParameter("id_page") != null) {
+			request.setAttribute("sapxepsanpham", 1); /* dùng để phân trang */ 
+		if (request.getParameter("id_page") != null) { // đã nhấn vào nút trang dưới phần phân trang
 			int id = Integer.parseInt(request.getParameter("id_page"));
 			request.setAttribute("int_page", id);
 		}
-		request.setAttribute("gia", gia);
+		request.setAttribute("gia", gia); 
 		if (request.getParameter("txtloai") != null) {
 			request.setAttribute("id_loaisp", id_loai);
 		}

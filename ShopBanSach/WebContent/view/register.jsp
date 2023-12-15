@@ -19,6 +19,7 @@
         <%@include file="/view/template/header.jsp" %>
         <div id="wpcontent-user">
             <div class="content-user-banner">
+            
                 <div class="banner-user">
                     <img  src="<%= request.getContextPath() %>/view/image/login.png" alt="">
                 </div>

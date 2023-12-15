@@ -52,10 +52,7 @@ public class searchServlet extends HttpServlet {
 				txtsearch = request.getParameter("txtsearch");
 				Products = dao.searchByName(txtsearch);
 			}
-//			else {
-//				Products = dao.getAll();
-//			}
-			//			List<product> Products =  new ArrayList<product>();
+
 			if(gia.equals("tren")) {
 				if(request.getParameter("txtsearch")!=null) {
 					for(product c:Products) {
@@ -72,8 +69,6 @@ public class searchServlet extends HttpServlet {
 							products.add(c);
 					}
 				}
-				//System.out.println(products.size());
-			//	request.setAttribute("products", products);
 			}
 			if(products.size() == 0 ) {
 	    		request.setAttribute("error", "Không tìm thấy sản phẩm!");
